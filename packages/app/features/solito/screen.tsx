@@ -1,10 +1,10 @@
 import { TextLink } from "solito/link";
-import { View } from "react-native";
+import { View } from "../../design/view";
 
 export function SolitoScreen() {
   return (
-    <View>
-      <TextLink href="/user/fernando">Regular Link</TextLink>
+    <View className="flex-1 items-center justify-center">
+      <TextLink href="/">👈 Go Home</TextLink>
     </View>
   );
 }
