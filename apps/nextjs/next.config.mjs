@@ -14,6 +14,7 @@ const nextConfig = {
   swcMinify: true,
   transpilePackages: [
     "@acme/api",
+    "@acme/app",
     "@acme/db",
     "react-native",
     "react-native-web",

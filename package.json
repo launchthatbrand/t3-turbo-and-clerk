@@ -3,7 +3,8 @@
   "private": true,
   "packageManager": "pnpm@7.13.0",
   "scripts": {
-    "build": "turbo build",
+    "build": "pnpm with-env turbo build",
+    "build-web": "pnpm with-env turbo --filter nextjs... build",
     "clean": "rm -rf node_modules",
     "clean:workspaces": "turbo clean",
     "db-generate": "turbo db-generate",
@@ -13,12 +14,14 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo lint",
     "FIXME:lint": "turbo lint && manypkg check",
-    "type-check": "turbo type-check"
+    "type-check": "turbo type-check",
+    "with-env": "dotenv -e .env --"
   },
   "dependencies": {
     "@manypkg/cli": "^0.19.2",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
+    "dotenv-cli": "^7.0.0",
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.1.13",
