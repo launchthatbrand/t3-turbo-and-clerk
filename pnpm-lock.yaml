@@ -95,6 +95,7 @@ importers:
   apps/nextjs:
     specifiers:
       '@acme/api': '*'
+      '@acme/app': '*'
       '@acme/db': '*'
       '@acme/tailwind-config': '*'
       '@clerk/nextjs': ^4.11.0
@@ -119,6 +120,7 @@ importers:
       zod: ^3.18.0
     dependencies:
       '@acme/api': link:../../packages/api
+      '@acme/app': link:../../packages/app
       '@acme/db': link:../../packages/db
       '@acme/tailwind-config': link:../../packages/config/tailwind
       '@clerk/nextjs': 4.15.0_yucv4tfv7v7nrkw2uguegj6e7e
