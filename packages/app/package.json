@@ -1,0 +1,12 @@
+{
+  "name": "@acme/app",
+  "version": "0.1.0",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "license": "MIT",
+  "dependencies": {
+    "solito": "3.0.0",
+    "nativewind": "2.0.9"
+  },
+  "sideEffects": false
+}
