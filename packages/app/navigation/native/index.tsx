@@ -1,6 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-//import { HomeScreen } from '../../features/home/screen'
+import { HomeScreen } from "../../features/home/screen";
 import { SolitoScreen } from "../../features/solito/screen";
 //import { UserDetailScreen } from '../../features/user/detail-screen'
 
@@ -12,13 +12,13 @@ const Stack = createNativeStackNavigator<{
 export function NativeNavigation() {
   return (
     <Stack.Navigator>
-      {/* <Stack.Screen
+      <Stack.Screen
         name="home"
         component={HomeScreen}
         options={{
-          title: 'Home',
+          title: "Home",
         }}
-      /> */}
+      />
       <Stack.Screen
         name="solito"
         component={SolitoScreen}
