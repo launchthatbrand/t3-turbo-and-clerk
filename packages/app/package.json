@@ -5,6 +5,8 @@
   "types": "./index.ts",
   "license": "MIT",
   "dependencies": {
+    "@react-navigation/native": "^6.0.11",
+    "@react-navigation/native-stack": "^6.5.0",
     "solito": "3.0.0",
     "nativewind": "2.0.9"
   },

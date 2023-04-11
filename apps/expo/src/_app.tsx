@@ -8,6 +8,15 @@ import { SignInSignUpScreen } from "./screens/signin";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { tokenCache } from "./utils/cache";
 import Constants from "expo-constants";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import { NativeNavigation } from "@acme/app/navigation/native";
+import { Provider } from "@acme/app/provider";
+
+const Stack = createNativeStackNavigator<{
+  home: undefined;
+  solito: undefined;
+}>();
 
 export const App = () => {
   return (
@@ -17,10 +26,12 @@ export const App = () => {
     >
       <SignedIn>
         <TRPCProvider>
-          <SafeAreaProvider>
-            <HomeScreen />
-            <StatusBar />
-          </SafeAreaProvider>
+          <Provider>
+            <SafeAreaProvider>
+              <NativeNavigation />
+              <StatusBar />
+            </SafeAreaProvider>
+          </Provider>
         </TRPCProvider>
       </SignedIn>
       <SignedOut>
