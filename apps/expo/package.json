@@ -4,7 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
-    "dev": "expo start",
+    "dev": "expo start --clear",
     "clean": "rm -rf .expo .turbo node_modules",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -25,7 +25,6 @@
     "expo-web-browser": "^12.1.1",
     "expo-secure-store": "^12.1.1",
     "expo-status-bar": "^1.4.2",
-    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.70.5",
@@ -44,7 +43,8 @@
   "removedDependecies": {
     "@acme/tailwind-config": "*",
     "tailwindcss": "^3.2.4",
-    "postcss": "^8.4.19"
+    "postcss": "^8.4.19",
+    "nativewind": "^2.0.11"
   },
   "private": true
 }
