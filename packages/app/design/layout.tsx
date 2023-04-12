@@ -1,6 +1,4 @@
-import { View } from "react-native";
-import { styled } from "nativewind";
-import { SafeAreaView as ReactNativeSafeAreaView } from "react-native-safe-area-context";
+import { View } from 'react-native'
+import { styled } from 'nativewind'
 
-export const Row = styled(View, "flex-row");
-export const SafeAreaView = styled(ReactNativeSafeAreaView);
+export const Row = styled(View, "flex-row")
