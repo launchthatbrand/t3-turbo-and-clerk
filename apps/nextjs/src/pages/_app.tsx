@@ -4,10 +4,14 @@ import type { AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
 import { trpc } from "../utils/trpc";
 
+import { Provider } from "@acme/app/provider";
+
 const MyApp: AppType = ({ Component, pageProps: { ...pageProps } }) => {
   return (
     <ClerkProvider {...pageProps}>
-      <Component {...pageProps} />
+      <Provider>
+        <Component {...pageProps} />
+      </Provider>
     </ClerkProvider>
   );
 };
