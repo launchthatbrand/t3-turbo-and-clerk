@@ -6,6 +6,7 @@ const CLERK_PUBLISHABLE_KEY =
 const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   name: "expo",
   slug: "expo",
+  scheme: "expo",
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/icon.png",
@@ -21,7 +22,7 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "your.bundle.identifier",
+    bundleIdentifier: "com.solito.nativewind",
   },
   android: {
     adaptiveIcon: {

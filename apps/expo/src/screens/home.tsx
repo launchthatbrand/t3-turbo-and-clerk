@@ -1,6 +1,5 @@
 import React from "react";
 
-import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useAuth } from "@clerk/clerk-expo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlashList } from "@shopify/flash-list";
@@ -10,6 +9,9 @@ import type { AppRouter } from "@acme/api";
 import { trpc } from "../utils/trpc";
 
 import { Link as SolitoLink } from "solito/link";
+import { View } from "@acme/app/design/view";
+import { Button, TouchableOpacity } from "@acme/app/design/button";
+import { Text, TextInput } from "@acme/app/design/typography";
 
 const SignOut = () => {
   const { signOut } = useAuth();

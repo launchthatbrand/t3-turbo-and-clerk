@@ -14,24 +14,21 @@ import { Provider } from "@acme/app/provider";
 
 export const App = () => {
   return (
-    <ClerkProvider
-      publishableKey={Constants.expoConfig?.extra?.CLERK_PUBLISHABLE_KEY}
-      tokenCache={tokenCache}
-    >
-      <Provider>
+    <Provider>
+      <ClerkProvider
+        publishableKey={Constants.expoConfig?.extra?.CLERK_PUBLISHABLE_KEY}
+        tokenCache={tokenCache}
+      >
         <SignedIn>
           <TRPCProvider>
-            <SafeAreaProvider>
-              <NativeNavigation />
-              <HomeScreen />
-              <StatusBar />
-            </SafeAreaProvider>
+            <NativeNavigation />
+            <StatusBar />
           </TRPCProvider>
         </SignedIn>
         <SignedOut>
           <SignInSignUpScreen />
         </SignedOut>
-      </Provider>
-    </ClerkProvider>
+      </ClerkProvider>
+    </Provider>
   );
 };
