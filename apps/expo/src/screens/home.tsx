@@ -9,6 +9,8 @@ import type { AppRouter } from "@acme/api";
 
 import { trpc } from "../utils/trpc";
 
+import { Link as SolitoLink } from "solito/link";
+
 const SignOut = () => {
   const { signOut } = useAuth();
   return (
@@ -109,6 +111,9 @@ export const HomeScreen = () => {
 
         <CreatePost />
         <SignOut />
+        <SolitoLink href="/solito">
+          <Button title="Solito" />
+        </SolitoLink>
       </View>
     </SafeAreaView>
   );
