@@ -6,7 +6,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { FlashList } from "@shopify/flash-list";
 import type { inferProcedureOutput } from "@trpc/server";
 import type { AppRouter } from "@acme/api";
-import { TextLink } from "solito/link";
 
 import { trpc } from "../utils/trpc";
 
@@ -110,7 +109,6 @@ export const HomeScreen = () => {
 
         <CreatePost />
         <SignOut />
-        <TextLink href="/solito">Regular Link</TextLink>
       </View>
     </SafeAreaView>
   );
