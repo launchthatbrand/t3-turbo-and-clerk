@@ -15,6 +15,13 @@ export function NativeNavigation() {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="home"
+        component={HomeScreen}
+        options={{
+          title: "Home",
+        }}
+      />
+      <Stack.Screen
         name="solito"
         component={SolitoScreen}
         options={{
