@@ -1,5 +1,6 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+import { HomeScreen } from "../../features/home/screen";
 import { SolitoScreen } from "../../features/solito/screen";
 
 const Stack = createNativeStackNavigator<{
@@ -13,6 +14,13 @@ const Stack = createNativeStackNavigator<{
 export function NativeNavigation() {
   return (
     <Stack.Navigator>
+      <Stack.Screen
+        name="home"
+        component={HomeScreen}
+        options={{
+          title: "Home",
+        }}
+      />
       <Stack.Screen
         name="solito"
         component={SolitoScreen}
