@@ -20,7 +20,6 @@ const nextConfig = {
     "react-native-web",
     "solito",
     "moti",
-    "app",
     "react-native-reanimated",
     "nativewind",
     "react-native-gesture-handler",
