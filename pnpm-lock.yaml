@@ -173,12 +173,16 @@ importers:
       '@acme/api': '*'
       '@react-navigation/native': ^6.0.8
       '@react-navigation/native-stack': ^6.5.0
+      '@trpc/next': 10.9.0
+      '@trpc/react-query': 10.9.0
       nativewind: ^2.0.11
       solito: 3.0.0
     dependencies:
       '@acme/api': link:../api
       '@react-navigation/native': 6.1.6
       '@react-navigation/native-stack': 6.9.12_oulxqbezzo6r4fneajyszhgggq
+      '@trpc/next': 10.9.0_@trpc+react-query@10.9.0
+      '@trpc/react-query': 10.9.0
       nativewind: 2.0.11
       solito: 3.0.0
 
@@ -2845,6 +2849,21 @@ packages:
       react-ssr-prepass: 1.5.0_react@18.2.0
     dev: false
 
+  /@trpc/next/10.9.0_@trpc+react-query@10.9.0:
+    resolution: {integrity: sha512-h/W8VHMki/fw7vHNMs1Ku7bLqccjpiKCE1wkqbvHfBOO1ARDmarRbuK6dLqJilip/f7jkFXcrxwB+eNgK4+6Wg==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.3.8
+      '@trpc/client': 10.9.0
+      '@trpc/react-query': ^10.8.0
+      '@trpc/server': 10.9.0
+      next: '*'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@trpc/react-query': 10.9.0
+      react-ssr-prepass: 1.5.0
+    dev: false
+
   /@trpc/react-query/10.19.1_ctnjxqnm464aolergljm3ebpq4:
     resolution: {integrity: sha512-bKtv/hz1ssoH/56i72skRcJ2Q4/gUJhrxvqDD0sJ6PczsPq4xbyO2GDs/cPaVqDpYf2EEAG9nHo48t8fW/XQ/w==}
     peerDependencies:
@@ -2859,6 +2878,16 @@ packages:
       '@trpc/server': 10.19.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@trpc/react-query/10.9.0:
+    resolution: {integrity: sha512-I7xtdFj/AETwc9HfY2bGxKINij39r26LvfIiTBfz2pBj1ELrcgucWmPeI2eS6pon/uI1E9Nqa6fQCg/zkg764Q==}
+    peerDependencies:
+      '@tanstack/react-query': ^4.3.8
+      '@trpc/client': 10.9.0
+      '@trpc/server': 10.9.0
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
     dev: false
 
   /@trpc/server/10.19.1:
@@ -8489,6 +8518,12 @@ packages:
       object-assign: 4.1.1
       react: 18.2.0
       react-is: 18.2.0
+    dev: false
+
+  /react-ssr-prepass/1.5.0:
+    resolution: {integrity: sha512-yFNHrlVEReVYKsLI5lF05tZoHveA5pGzjFbFJY/3pOqqjGOmMmqx83N4hIjN2n6E1AOa+eQEUxs3CgRnPmT0RQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dev: false
 
   /react-ssr-prepass/1.5.0_react@18.2.0:
