@@ -6,6 +6,9 @@ import type { AppRouter } from "@acme/api";
 import { useAuth, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
+import { Link as SolitoLink } from "solito/link";
+import { Button } from "@acme/app/design/button";
+
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
 }> = ({ post }) => {
@@ -94,6 +97,9 @@ const AuthShowcase: React.FC = () => {
           <Link href="/sign-in">Sign In</Link>
         </p>
       )}
+      <SolitoLink href="/solito">
+        <Button title="Solito" />
+      </SolitoLink>
     </div>
   );
 };
