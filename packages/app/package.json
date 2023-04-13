@@ -5,6 +5,7 @@
   "types": "./index.ts",
   "license": "MIT",
   "dependencies": {
+    "@acme/api": "*",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
     "solito": "3.0.0",

@@ -21,6 +21,7 @@ export const App = () => {
       >
         <SignedIn>
           <TRPCProvider>
+            {/* <HomeScreen /> */}
             <NativeNavigation />
             <StatusBar />
           </TRPCProvider>

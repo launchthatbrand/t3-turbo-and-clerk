@@ -11,7 +11,7 @@ export function SolitoScreen() {
       </Text>
       <Link href="/">
         <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
-          <Button title="Go Home" />
+          <Button disabled title="Go Home" />
         </View>
       </Link>
     </View>
