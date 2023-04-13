@@ -8,10 +8,10 @@ import { View, SafeAreaView } from "../../design/view";
 import type { AppRouter } from "@acme/api";
 import type { inferProcedureOutput } from "@trpc/server";
 
-import { trpc } from "../../utils/trpc";
+/* import { trpc } from "../../utils/trpc"; */
 import { FlashList } from "@shopify/flash-list";
 
-const PostCard: React.FC<{
+/* const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
 }> = ({ post }) => {
   return (
@@ -20,9 +20,9 @@ const PostCard: React.FC<{
       <Text className="text-white">{post.content}</Text>
     </View>
   );
-};
+}; */
 
-const CreatePost: React.FC = () => {
+/* const CreatePost: React.FC = () => {
   const utils = trpc.useContext();
   const { mutate } = trpc.post.create.useMutation({
     async onSuccess() {
@@ -58,10 +58,10 @@ const CreatePost: React.FC = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}; */
 
 export function HomeScreen() {
-  const postQuery = trpc.post.all.useQuery();
+  /* const postQuery = trpc.post.all.useQuery(); */
   const [showPost, setShowPost] = React.useState<string | null>(null);
   return (
     <SafeAreaView className="flex h-screen flex-col bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -83,7 +83,7 @@ export function HomeScreen() {
           )}
         </View>
 
-        <FlashList
+        {/* <FlashList
           data={postQuery.data}
           estimatedItemSize={20}
           ItemSeparatorComponent={() => <View className="h-2" />}
@@ -94,7 +94,7 @@ export function HomeScreen() {
           )}
         />
 
-        <CreatePost />
+        <CreatePost /> */}
 
         <Link href="/solito">
           <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
