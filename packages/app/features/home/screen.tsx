@@ -107,6 +107,6 @@ export function HomeScreen() {
   );
 }
 
-HomeScreen.getLayout = function getLayout(page: React.ReactNode) {
+/* HomeScreen.getLayout = function getLayout(page: React.ReactNode) {
   return <MainLayout>{page}</MainLayout>;
-};
+}; */

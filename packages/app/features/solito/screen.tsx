@@ -19,6 +19,6 @@ export function SolitoScreen() {
   );
 }
 
-SolitoScreen.getLayout = function getLayout(page: React.ReactNode) {
+/* SolitoScreen.getLayout = function getLayout(page: React.ReactNode) {
   return <MainLayout>{page}</MainLayout>;
-};
+}; */
