@@ -8,7 +8,7 @@ export const postRouter = router({
   byId: publicProcedure.input(z.string()).query(({ ctx, input }) => {
     return ctx.prisma.post.findFirst({ where: { id: input } });
   }),
-  create: protectedProcedure
+  create: publicProcedure
     .input(z.object({ title: z.string(), content: z.string() }))
     .mutation(({ ctx, input }) => {
       return ctx.prisma.post.create({ data: input });
