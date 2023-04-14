@@ -1,6 +1,5 @@
 // src/pages/_app.tsx
 import "../styles/globals.css";
-import type { AppType } from "next/app";
 import { ClerkProvider } from "@clerk/nextjs";
 import { trpc } from "@acme/app/utils/trpc.web";
 import type { SolitoAppProps } from "solito";
