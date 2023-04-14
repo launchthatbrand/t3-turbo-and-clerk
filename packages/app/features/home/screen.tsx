@@ -22,7 +22,7 @@ const PostCard: React.FC<{
   );
 };
 
-/* const CreatePost: React.FC = () => {
+const CreatePost: React.FC = () => {
   const utils = trpc.useContext();
   const { mutate } = trpc.post.create.useMutation({
     async onSuccess() {
@@ -58,7 +58,7 @@ const PostCard: React.FC<{
       </TouchableOpacity>
     </View>
   );
-}; */
+};
 
 export function HomeScreen() {
   const { data: postData, isLoading, error } = trpc.post.all.useQuery();
@@ -94,7 +94,7 @@ export function HomeScreen() {
           )}
         />
 
-        {/* <CreatePost /> */}
+        <CreatePost />
 
         <Link href="/solito">
           <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
