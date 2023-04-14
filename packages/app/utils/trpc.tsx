@@ -61,10 +61,11 @@ export const TRPCProvider: React.FC<{
           async headers() {
             const authToken = await getToken();
             return {
-              Authorization: authToken,
+              Authorization: authToken ?? undefined,
             };
           },
           url: `${getBaseUrl()}/api/trpc`,
+          maxURLLength: 2083,
         }),
       ],
     }),

@@ -8,7 +8,7 @@ import { View, SafeAreaView } from "../../design/view";
 import type { AppRouter } from "@acme/api";
 import type { inferProcedureOutput } from "@trpc/server";
 
-/* import { trpc } from "../../utils/trpc"; */
+import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
 
 /* const PostCard: React.FC<{
@@ -61,7 +61,7 @@ import { FlashList } from "@shopify/flash-list";
 }; */
 
 export function HomeScreen() {
-  /* const postQuery = trpc.post.all.useQuery(); */
+  const { data, isLoading, error } = trpc.post.all.useQuery();
   const [showPost, setShowPost] = React.useState<string | null>(null);
   return (
     <SafeAreaView className="flex h-screen flex-col bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -95,6 +95,11 @@ export function HomeScreen() {
         />
 
         <CreatePost /> */}
+        {data?.map((entry) => (
+          <View key={entry.id}>
+            <Text>{entry.id}</Text>
+          </View>
+        ))}
 
         <Link href="/solito">
           <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
