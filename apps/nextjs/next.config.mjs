@@ -23,6 +23,8 @@ const nextConfig = {
     "react-native-reanimated",
     "nativewind",
     "react-native-gesture-handler",
+    "@shopify/flash-list",
+    "recyclerlistview",
   ],
   // We already do linting on GH actions
   eslint: {

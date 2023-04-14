@@ -8,6 +8,7 @@
     "@acme/api": "*",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "@shopify/flash-list": "^1.4.0",
     "@trpc/next": "10.9.0",
     "@trpc/react-query": "10.9.0",
     "solito": "3.0.0",

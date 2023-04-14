@@ -11,7 +11,7 @@ import type { inferProcedureOutput } from "@trpc/server";
 import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
 
-/* const PostCard: React.FC<{
+const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
 }> = ({ post }) => {
   return (
@@ -20,7 +20,7 @@ import { FlashList } from "@shopify/flash-list";
       <Text className="text-white">{post.content}</Text>
     </View>
   );
-}; */
+};
 
 /* const CreatePost: React.FC = () => {
   const utils = trpc.useContext();
@@ -83,8 +83,8 @@ export function HomeScreen() {
           )}
         </View>
 
-        {/* <FlashList
-          data={postQuery.data}
+        <FlashList
+          data={data}
           estimatedItemSize={20}
           ItemSeparatorComponent={() => <View className="h-2" />}
           renderItem={(p) => (
@@ -94,12 +94,7 @@ export function HomeScreen() {
           )}
         />
 
-        <CreatePost /> */}
-        {data?.map((entry) => (
-          <View key={entry.id}>
-            <Text>{entry.id}</Text>
-          </View>
-        ))}
+        {/* <CreatePost /> */}
 
         <Link href="/solito">
           <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
