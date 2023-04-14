@@ -10,6 +10,7 @@ import type { inferProcedureOutput } from "@trpc/server";
 
 import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
+import MainLayout from "../../layouts/MainLayout";
 
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
@@ -105,3 +106,7 @@ export function HomeScreen() {
     </SafeAreaView>
   );
 }
+
+HomeScreen.getLayout = function getLayout(page: React.ReactNode) {
+  return <MainLayout>{page}</MainLayout>;
+};

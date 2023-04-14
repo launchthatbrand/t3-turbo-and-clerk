@@ -7,11 +7,10 @@ import type { SolitoAppProps } from "solito";
 import { Provider } from "@acme/app/provider";
 
 function MyApp({ Component, pageProps }: SolitoAppProps) {
+  const getLayout = Component.getLayout ?? ((page) => page);
   return (
     <ClerkProvider {...pageProps}>
-      <Provider>
-        <Component {...pageProps} />
-      </Provider>
+      <Provider>{getLayout(<Component {...pageProps} />)}</Provider>
     </ClerkProvider>
   );
 }

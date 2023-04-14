@@ -2,6 +2,7 @@ import { Link } from "solito/link";
 import { Button } from "../../design/button";
 import { Text } from "../../design/typography";
 import { View } from "../../design/view";
+import MainLayout from "../../layouts/MainLayout";
 
 export function SolitoScreen() {
   return (
@@ -17,3 +18,7 @@ export function SolitoScreen() {
     </View>
   );
 }
+
+SolitoScreen.getLayout = function getLayout(page: React.ReactNode) {
+  return <MainLayout>{page}</MainLayout>;
+};
