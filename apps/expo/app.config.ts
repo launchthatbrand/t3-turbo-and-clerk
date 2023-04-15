@@ -1,9 +1,9 @@
-import { ExpoConfig, ConfigContext } from "@expo/config";
+import type { ExpoConfig } from "@expo/config";
 
 const CLERK_PUBLISHABLE_KEY =
-  "pk_test_d29ydGh5LXdhaG9vLTk0LmNsZXJrLmFjY291bnRzLmRldiQ";
+  "pk_test_cHJvLWNyYXdkYWQtODcuY2xlcmsuYWNjb3VudHMuZGV2JA";
 
-const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
+const defineConfig = (): ExpoConfig => ({
   name: "expo",
   slug: "expo",
   scheme: "expo",
@@ -14,7 +14,7 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   splash: {
     image: "./assets/icon.png",
     resizeMode: "contain",
-    backgroundColor: "#2e026d",
+    backgroundColor: "#1F104A",
   },
   updates: {
     fallbackToCacheTimeout: 0,
@@ -22,12 +22,12 @@ const defineConfig = (_ctx: ConfigContext): ExpoConfig => ({
   assetBundlePatterns: ["**/*"],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: "com.solito.nativewind",
+    bundleIdentifier: "your.bundle.identifier",
   },
   android: {
     adaptiveIcon: {
       foregroundImage: "./assets/icon.png",
-      backgroundColor: "#2e026d",
+      backgroundColor: "#1F104A",
     },
   },
   extra: {

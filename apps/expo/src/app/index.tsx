@@ -1,17 +1,12 @@
 import React from "react";
 
+import { Button, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { useAuth } from "@clerk/clerk-expo";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FlashList } from "@shopify/flash-list";
-import type { inferProcedureOutput } from "@trpc/server";
-import type { AppRouter } from "@acme/api";
+import { Stack, useRouter } from "expo-router";
 
-import { trpc } from "../utils/trpc";
-
-import { Link as SolitoLink } from "solito/link";
-import { View } from "@acme/app/design/view";
-import { Button, TouchableOpacity } from "@acme/app/design/button";
-import { Text, TextInput } from "@acme/app/design/typography";
+import { trpc, type RouterOutputs } from "../utils/trpc";
 
 const SignOut = () => {
   const { signOut } = useAuth();
@@ -20,7 +15,7 @@ const SignOut = () => {
       <Button
         title="Sign Out"
         onPress={() => {
-          signOut();
+          signOut().catch((err) => console.log(err));
         }}
       />
     </View>
@@ -28,12 +23,23 @@ const SignOut = () => {
 };
 
 const PostCard: React.FC<{
-  post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
-}> = ({ post }) => {
+  post: RouterOutputs["post"]["all"][number];
+  onDelete: () => void;
+}> = ({ post, onDelete }) => {
+  const router = useRouter();
   return (
-    <View className="rounded-lg border-2 border-gray-500 p-4">
-      <Text className="text-xl font-semibold text-[#cc66ff]">{post.title}</Text>
-      <Text className="text-white">{post.content}</Text>
+    <View className="flex flex-row rounded-lg bg-white/10 p-4">
+      <View className="flex-grow">
+        <TouchableOpacity onPress={() => router.push(`/post/${post.id}`)}>
+          <Text className="text-xl font-semibold text-pink-400">
+            {post.title}
+          </Text>
+          <Text className="mt-2 text-white">{post.content}</Text>
+        </TouchableOpacity>
+      </View>
+      <TouchableOpacity onPress={onDelete}>
+        <Text className="font-bold uppercase text-pink-400">Delete</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -76,12 +82,16 @@ const CreatePost: React.FC = () => {
   );
 };
 
-export const HomeScreen = () => {
+const HomeScreen = () => {
+  const utils = trpc.useContext();
   const postQuery = trpc.post.all.useQuery();
   const [showPost, setShowPost] = React.useState<string | null>(null);
-
+  const deletePostMutation = trpc.post.delete.useMutation({
+    onSettled: () => utils.post.all.invalidate(),
+  });
   return (
     <SafeAreaView className="bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
+      <Stack.Screen options={{ title: "Home Page" }} />
       <View className="h-full w-full p-4">
         <Text className="mx-auto pb-2 text-5xl font-bold text-white">
           Create <Text className="text-[#cc66ff]">T3</Text> Turbo
@@ -106,17 +116,18 @@ export const HomeScreen = () => {
           ItemSeparatorComponent={() => <View className="h-2" />}
           renderItem={(p) => (
             <TouchableOpacity onPress={() => setShowPost(p.item.id)}>
-              <PostCard post={p.item} />
+              <PostCard
+                post={p.item}
+                onDelete={() => deletePostMutation.mutate(p.item.id)}
+              />
             </TouchableOpacity>
           )}
         />
 
         <CreatePost />
         <SignOut />
-        <SolitoLink href="/solito">
-          <Button title="Solito" />
-        </SolitoLink>
       </View>
     </SafeAreaView>
   );
 };
+export default HomeScreen;
