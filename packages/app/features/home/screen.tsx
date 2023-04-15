@@ -12,15 +12,6 @@ import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
 import MainLayout from "../../layouts/MainLayout";
 
-const DATA = [
-  {
-    title: "First Item",
-  },
-  {
-    title: "Second Item",
-  },
-];
-
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
 }> = ({ post }) => {
