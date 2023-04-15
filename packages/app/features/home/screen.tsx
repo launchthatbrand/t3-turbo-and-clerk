@@ -33,6 +33,7 @@ const PostCard: React.FC<{
 };
 
 export function HomeScreen() {
+  const { data: postData, isLoading, error } = trpc.post.all.useQuery();
   const [showPost, setShowPost] = React.useState<string | null>(null);
   return (
     <SafeAreaView className="h-full flex-1 flex-col justify-center bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -55,7 +56,7 @@ export function HomeScreen() {
         </View>
 
         <FlashList
-          data={DATA}
+          data={postData}
           estimatedItemSize={20}
           ItemSeparatorComponent={() => <View className="h-2" />}
           renderItem={(p) => (
