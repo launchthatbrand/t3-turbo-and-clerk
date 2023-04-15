@@ -12,57 +12,7 @@ import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
 import MainLayout from "../../layouts/MainLayout";
 
-const PostCard: React.FC<{
-  post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
-}> = ({ post }) => {
-  return (
-    <View className="rounded-lg border-2 border-gray-500 p-4">
-      <Text className="text-xl font-semibold text-[#cc66ff]">{post.title}</Text>
-      <Text className="text-white">{post.content}</Text>
-    </View>
-  );
-};
-
-const CreatePost: React.FC = () => {
-  const utils = trpc.useContext();
-  const { mutate } = trpc.post.create.useMutation({
-    async onSuccess() {
-      await utils.post.all.invalidate();
-    },
-  });
-
-  const [title, onChangeTitle] = React.useState("");
-  const [content, onChangeContent] = React.useState("");
-
-  return (
-    <View className="flex flex-col border-t-2 border-gray-500 p-4">
-      <TextInput
-        className="mb-2 rounded border-2 border-gray-500 p-2 text-white"
-        onChangeText={onChangeTitle}
-        placeholder="Title"
-      />
-      <TextInput
-        className="mb-2 rounded border-2 border-gray-500 p-2 text-white"
-        onChangeText={onChangeContent}
-        placeholder="Content"
-      />
-      <TouchableOpacity
-        className="rounded bg-[#cc66ff] p-2"
-        onPress={() => {
-          mutate({
-            title,
-            content,
-          });
-        }}
-      >
-        <Text className="font-semibold text-white">Publish post</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
 export function HomeScreen() {
-  const { data: postData, isLoading, error } = trpc.post.all.useQuery();
   const [showPost, setShowPost] = React.useState<string | null>(null);
   return (
     <SafeAreaView className="flex h-screen flex-col bg-[#2e026d] bg-gradient-to-b from-[#2e026d] to-[#15162c]">
@@ -83,30 +33,7 @@ export function HomeScreen() {
             </Text>
           )}
         </View>
-
-        <FlashList
-          data={postData}
-          estimatedItemSize={20}
-          ItemSeparatorComponent={() => <View className="h-2" />}
-          renderItem={(p) => (
-            <TouchableOpacity onPress={() => setShowPost(p.item.id)}>
-              <PostCard post={p.item} />
-            </TouchableOpacity>
-          )}
-        />
-
-        <CreatePost />
-
-        <Link href="/solito">
-          <View className="rounded-lg border-2 border-gray-500 bg-slate-400 p-4">
-            <Button disabled title="Go Solito" />
-          </View>
-        </Link>
       </View>
     </SafeAreaView>
   );
 }
-
-/* HomeScreen.getLayout = function getLayout(page: React.ReactNode) {
-  return <MainLayout>{page}</MainLayout>;
-}; */

@@ -1,5 +1,5 @@
 /** @type {import("@babel/core").ConfigFunction} */
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache.forever();
 
   // Make Expo Router run from `src/app` instead of `app`.
@@ -8,6 +8,6 @@ module.exports = function(api) {
 
   return {
     plugins: ["nativewind/babel", require.resolve("expo-router/babel")],
-    presets: ["babel-preset-expo"],
+    presets: [["babel-preset-expo", { jsxRuntime: "automatic" }]],
   };
 };

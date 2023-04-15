@@ -32,6 +32,7 @@ importers:
   apps/expo:
     specifiers:
       '@acme/api': '*'
+      '@acme/app': '*'
       '@acme/eslint-config': '*'
       '@acme/tailwind-config': '*'
       '@babel/core': ^7.19.3
@@ -88,6 +89,7 @@ importers:
       react-native-web: 0.18.12_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       '@acme/api': link:../../packages/api
+      '@acme/app': link:../../packages/app
       '@acme/eslint-config': link:../../packages/config/eslint
       '@acme/tailwind-config': link:../../packages/config/tailwind
       '@babel/core': 7.21.4
