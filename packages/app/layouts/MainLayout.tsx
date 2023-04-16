@@ -8,7 +8,7 @@ export const MainLayout = (props: PropsWithChildren<unknown>) => {
     <>
       <Sidebar />
       <div className="bg-blueGray-100 relative md:ml-64">
-        {/* <AdminNavbar /> */}
+        <AdminNavbar />
         <HeaderStats />
         <div className="-m-24 mx-auto w-full px-4 md:px-10">
           {props.children}
