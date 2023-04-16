@@ -2,15 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TRPCProvider } from "../utils/trpc";
-import { SignInSignUpScreen } from "../screens/signin";
+import { SignInSignUpScreen } from "@acme/app/features/signin/screen";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { tokenCache } from "../utils/cache";
 import Constants from "expo-constants";
 
 import { Provider } from "@acme/app/provider";
 import { Stack, Tabs } from "expo-router";
-import { HomeScreen } from "@acme/app/features/home/screen";
-import { SolitoScreen } from "@acme/app/features/solito/screen";
 
 const RootLayout = () => {
   return (
