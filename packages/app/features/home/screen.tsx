@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "solito/link";
 import { Button, TouchableOpacity } from "../../design/button";
-import { Text, TextInput } from "../../design/typography";
+import { Text } from "../../design/typography";
 import { View, SafeAreaView } from "../../design/view";
 
 import type { AppRouter } from "@acme/api";
@@ -10,7 +10,6 @@ import type { inferProcedureOutput } from "@trpc/server";
 
 import { trpc } from "../../utils/trpc";
 import { FlashList } from "@shopify/flash-list";
-import MainLayout from "../../layouts/MainLayout";
 
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
