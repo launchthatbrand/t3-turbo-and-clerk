@@ -13,6 +13,7 @@
     "expo-router": "^1.5.2",
     "expo-secure-store": "^12.1.1",
     "expo-web-browser": "^12.1.1",
+    "nativewind": "^2.0.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.4",
@@ -32,7 +33,7 @@
   },
   "scripts": {
     "start": "expo start",
-    "dev": "expo start --ios",
+    "dev": "expo start --clear --ios",
     "clean": "rm -rf .expo .turbo node_modules",
     "android": "expo start --android",
     "ios": "expo start --ios",
