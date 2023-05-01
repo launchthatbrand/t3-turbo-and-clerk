@@ -26,6 +26,18 @@ H1.defaultProps = {
   accessibilityRole: "header",
 };
 
+export const H5 = styled(NativeText, "text-2xl font-extrabold my-4");
+H5.defaultProps = {
+  accessibilityLevel: 1,
+  accessibilityRole: "header",
+};
+
+export const H6 = styled(NativeText, "text-xl font-extrabold my-4");
+H6.defaultProps = {
+  accessibilityLevel: 1,
+  accessibilityRole: "header",
+};
+
 /**
  * This is a more advanced component with custom styles and per-platform functionality
  */

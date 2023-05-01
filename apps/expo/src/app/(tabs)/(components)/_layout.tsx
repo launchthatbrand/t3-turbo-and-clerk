@@ -28,9 +28,30 @@ function CustomDrawerContent({
       style={{ flex: 1 }}
     >
       <DrawerItem
+        label="Index"
+        onPress={(): void => {
+          navigation.navigate("index");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
         label="FirstComponent"
         onPress={(): void => {
           navigation.navigate("FirstComponent");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
+        label="CardSettings"
+        onPress={(): void => {
+          navigation.navigate("CardSettings");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
+        label="CardStats"
+        onPress={(): void => {
+          navigation.navigate("CardStats");
           // router.replace('drawer/screen1');
         }}
       />
