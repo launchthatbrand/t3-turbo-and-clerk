@@ -42,6 +42,13 @@ function CustomDrawerContent({
         }}
       />
       <DrawerItem
+        label="Form"
+        onPress={(): void => {
+          navigation.navigate("Form");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
         label="CardSettings"
         onPress={(): void => {
           navigation.navigate("CardSettings");
