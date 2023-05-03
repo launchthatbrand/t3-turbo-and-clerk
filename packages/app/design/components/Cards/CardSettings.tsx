@@ -13,6 +13,7 @@ type FormData = {
   city: string;
   country: string;
   postCode: string;
+  aboutMe: string;
 };
 
 export function CardSettings() {
@@ -26,7 +27,7 @@ export function CardSettings() {
       emailAddress: "",
     },
   });
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data: unknown) => console.log(data);
 
   return (
     <View className="bg-blueGray-100 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 bg-white shadow-lg">

@@ -4,33 +4,24 @@ import { Button } from "../../../design/button";
 import { Row } from "../../../design/layout";
 import PropTypes from "prop-types";
 
-export function CardStats({
-  statSubtitle,
-  statTitle,
-  statArrow,
-  statPercent,
-  statPercentColor,
-  statDescripiron,
-  statIconName,
-  statIconColor,
-}) {
+export function CardStats(props: CardStatsProps): JSX.Element {
   return (
     <View className="relative mb-6 flex min-w-0 flex-col break-words rounded bg-white shadow-lg xl:mb-0">
       <View className="flex-auto p-4">
         <View className="flex flex-row flex-wrap">
           <View className="relative max-w-full flex-grow pr-4">
             <Text className="text-blueGray-400 text-xs font-bold uppercase">
-              {statSubtitle}
+              {props.statSubtitle}
             </Text>
             <Text className="text-blueGray-700 text-xl font-semibold">
-              {statTitle}
+              {props.statTitle}
             </Text>
           </View>
           <View className="relative w-auto flex-initial pl-4">
             <View
               className={
                 "inline-flex h-12 w-12 items-center justify-center rounded-full p-3 text-center text-white shadow-lg " +
-                statIconColor
+                props.statIconColor
               }
             >
               {/* <i className={statIconName}></i> */}
@@ -38,7 +29,7 @@ export function CardStats({
           </View>
         </View>
         <Text className="text-blueGray-400 mt-4 text-sm">
-          <Text className={statPercentColor + " mr-2"}>
+          <Text className={props.statPercentColor + " mr-2"}>
             {/*             <i
               className={
                 statArrow === "up"
@@ -48,15 +39,30 @@ export function CardStats({
                   : ""
               }
             ></i>{" "} */}
-            {statPercent}%
+            {props.statPercent}%
           </Text>
           <View className="whitespace-nowrap">
-            <Text>{statDescripiron}</Text>
+            <Text>{props.statDescripiron}</Text>
           </View>
         </Text>
       </View>
     </View>
   );
+}
+
+interface CardStatsProps {
+  statSubtitle: string;
+  statTitle: string;
+  statArrow: "up" | "down";
+  statPercent: string;
+  // can be any of the text color utilities
+  // from tailwindcss
+  statPercentColor: string;
+  statDescripiron: string;
+  statIconName: string;
+  // can be any of the background color utilities
+  // from tailwindcss
+  statIconColor: string;
 }
 
 CardStats.defaultProps = {
