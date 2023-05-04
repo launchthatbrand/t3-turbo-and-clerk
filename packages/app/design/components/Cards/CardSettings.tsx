@@ -38,17 +38,19 @@ export function CardSettings() {
           <Text className="text-blueGray-700 align-middle text-xl font-bold">
             My account
           </Text>
-          <TouchableOpacity
-            onPress={() => {
-              signOut();
-            }}
-            activeOpacity={1}
-            className="active:bg-blueGray-600 bg-blueGray-700 mr-1 rounded px-4 py-2 shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
-          >
-            <Text className="p-0 text-xs font-bold uppercase text-white">
-              Log Out
-            </Text>
-          </TouchableOpacity>
+          <SignedIn>
+            <TouchableOpacity
+              onPress={() => {
+                signOut();
+              }}
+              activeOpacity={1}
+              className="active:bg-blueGray-600 bg-blueGray-700 mr-1 rounded px-4 py-2 shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+            >
+              <Text className="p-0 text-xs font-bold uppercase text-white">
+                Log Out
+              </Text>
+            </TouchableOpacity>
+          </SignedIn>
         </View>
       </View>
       <View className="flex-auto px-4 py-10 pt-0 lg:px-10">
