@@ -1,9 +1,9 @@
-import { HomeScreen as FeatureHomeScreen } from "@acme/app/features/home/screen";
-import MainLayout from "@acme/app/layouts/MainLayout";
+import { LandingScreen as FeatureLandingScreen } from "@acme/app/features/landing/screen";
+import FrontendLayout from "@acme/app/layouts/FrontendLayout";
 export default function HomeScreen() {
-  return <FeatureHomeScreen />;
+  return <FeatureLandingScreen />;
 }
 
 HomeScreen.getLayout = function getLayout(page: React.ReactNode) {
-  return <MainLayout>{page}</MainLayout>;
+  return <FrontendLayout>{page}</FrontendLayout>;
 };
