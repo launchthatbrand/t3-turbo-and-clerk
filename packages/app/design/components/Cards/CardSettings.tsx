@@ -1,6 +1,7 @@
 import { Text, H6, TextInput } from "../../../design/typography";
 import { View } from "../../../design/view";
 import { Button, TouchableOpacity } from "../../../design/button";
+import { SignedIn, SignedOut, useAuth } from "../../../utils/clerk";
 
 import { useForm, Controller } from "react-hook-form";
 
@@ -17,6 +18,7 @@ type FormData = {
 };
 
 export function CardSettings() {
+  const { signOut, userId } = useAuth();
   const {
     control,
     handleSubmit,
@@ -37,11 +39,14 @@ export function CardSettings() {
             My account
           </Text>
           <TouchableOpacity
+            onPress={() => {
+              signOut();
+            }}
             activeOpacity={1}
             className="active:bg-blueGray-600 bg-blueGray-700 mr-1 rounded px-4 py-2 shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
           >
             <Text className="p-0 text-xs font-bold uppercase text-white">
-              Settings
+              Log Out
             </Text>
           </TouchableOpacity>
         </View>

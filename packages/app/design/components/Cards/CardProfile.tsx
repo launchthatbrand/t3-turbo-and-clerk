@@ -1,5 +1,5 @@
 import { Text, H6, TextInput, TextLink } from "../../../design/typography";
-import { View } from "../../../design/view";
+import { SafeAreaView, ScrollView, View } from "../../../design/view";
 import { Button, TouchableOpacity } from "../../../design/button";
 
 import { useForm, Controller } from "react-hook-form";
@@ -73,16 +73,16 @@ export function CardProfile() {
             Jenna Stones
           </Text>
           <View className="text-blueGray-400 mb-2 mt-0 text-sm font-bold uppercase leading-normal">
-            <i className="fas fa-map-marker-alt text-blueGray-400 mr-2 text-lg"></i>{" "}
-            Los Angeles, California
+            {/* <i className="fas fa-map-marker-alt text-blueGray-400 mr-2 text-lg"></i>{" "} */}
+            <Text>Los Angeles, California</Text>
           </View>
           <View className="text-blueGray-600 mb-2 mt-10">
-            <i className="fas fa-briefcase text-blueGray-400 mr-2 text-lg"></i>
-            Solution Manager - Creative Tim Officer
+            {/* <i className="fas fa-briefcase text-blueGray-400 mr-2 text-lg"></i> */}
+            <Text>Solution Manager - Creative Tim Officer</Text>
           </View>
           <View className="text-blueGray-600 mb-2">
-            <i className="fas fa-university text-blueGray-400 mr-2 text-lg"></i>
-            University of Computer Science
+            {/* <i className="fas fa-university text-blueGray-400 mr-2 text-lg"></i> */}
+            <Text>University of Computer Science</Text>
           </View>
         </View>
         <View className="border-blueGray-200 mt-10 border-t py-10 text-center">

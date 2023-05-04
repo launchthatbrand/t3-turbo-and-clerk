@@ -3,6 +3,7 @@ import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TRPCProvider } from "../utils/trpc";
 import { SignInSignUpScreen } from "@acme/app/features/signin/screen";
+import Login from "@acme/app/design/components/Auth/Login";
 import { ClerkProvider, SignedIn, SignedOut } from "@clerk/clerk-expo";
 import { tokenCache } from "../utils/cache";
 import Constants from "expo-constants";
@@ -30,7 +31,7 @@ const RootLayout = () => {
           </TRPCProvider>
         </SignedIn>
         <SignedOut>
-          <SignInSignUpScreen />
+          <Login />
         </SignedOut>
       </ClerkProvider>
     </Provider>
