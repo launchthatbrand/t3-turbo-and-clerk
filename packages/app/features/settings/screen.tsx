@@ -3,7 +3,7 @@ import { Button } from "../../design/button";
 import { Text } from "../../design/typography";
 import { View } from "../../design/view";
 
-import { CardSettings } from "../../design/components/CardsOld/CardSettings.js";
+import { CardSettings } from "../../design/components/Cards/CardSettings";
 import CardProfile from "../../design/components/CardsOld/CardProfile.js";
 
 export function SettingsScreen() {

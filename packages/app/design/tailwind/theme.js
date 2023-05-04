@@ -7,10 +7,13 @@ const theme = {
   // https://tailwindcss.com/docs/adding-custom-styles
   colors: {
     blueGray: {
+      100: "rgba(241, 245, 249, 1)",
       200: "rgba(226, 232, 240, 1)",
+      300: "rgba(148, 163, 184, 1)",
       400: "rgba(148, 163, 184, 1)",
       500: "rgba(100, 116, 139, 1)",
       600: "rgba(71, 85, 105, 1)",
+      700: "rgba(51, 65, 85, 1)",
       800: "rgba(30, 41, 59, 1)",
     },
     transparent: "transparent",

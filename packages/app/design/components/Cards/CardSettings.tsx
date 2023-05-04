@@ -1,6 +1,6 @@
 import { Text, H6, TextInput } from "../../../design/typography";
 import { View } from "../../../design/view";
-import { Button } from "../../../design/button";
+import { Button, TouchableOpacity } from "../../../design/button";
 
 import { useForm, Controller } from "react-hook-form";
 
@@ -30,15 +30,20 @@ export function CardSettings() {
   const onSubmit = (data: unknown) => console.log(data);
 
   return (
-    <View className="bg-blueGray-100 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 bg-white shadow-lg">
+    <View className="bg-blueGray-100 relative mb-6 flex w-full min-w-0 flex-col break-words rounded-lg border-0 shadow-lg">
       <View className="mb-0 rounded-t  px-6 py-6">
         <View className="flex flex-row justify-between text-center align-middle">
           <Text className="text-blueGray-700 align-middle text-xl font-bold">
             My account
           </Text>
-          <View className="active:bg-blueGray-600 mr-1 rounded bg-[#2e026d] px-4 py-2 text-xs font-bold uppercase text-white shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none">
-            <Button className="p-0" title="Settings"></Button>
-          </View>
+          <TouchableOpacity
+            activeOpacity={1}
+            className="active:bg-blueGray-600 bg-blueGray-700 mr-1 rounded px-4 py-2 shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none"
+          >
+            <Text className="p-0 text-xs font-bold uppercase text-white">
+              Settings
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View className="flex-auto px-4 py-10 pt-0 lg:px-10">
@@ -146,7 +151,7 @@ export function CardSettings() {
               />
             </View>
           </View>
-          <View className="mt-6 w-full border-b-2 border-black" />
+          <View className="border-b-1 border-blueGray-300 mt-6 w-full" />
         </View>
         <Text className="text-blueGray-400 mb-6 mt-3 text-sm font-bold uppercase">
           Contact Information
@@ -252,7 +257,7 @@ export function CardSettings() {
               />
             </View>
           </View>
-          <View className="mt-6 w-full border-b-2 border-black" />
+          <View className="border-b-1 border-blueGray-300 mt-6 w-full" />
         </View>
         <Text className="text-blueGray-400 mb-6 mt-3 text-sm font-bold uppercase">
           About Me
@@ -282,7 +287,13 @@ export function CardSettings() {
             />
           </View>
         </View>
-        <Button title="Submit" onPress={handleSubmit(onSubmit)} />
+        <TouchableOpacity
+          onPress={handleSubmit(onSubmit)}
+          activeOpacity={1}
+          className="active:bg-blueGray-600 bg-blueGray-800 mb-1 mr-1 w-full rounded px-6 py-3 uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-lg focus:outline-none"
+        >
+          <Text className="text-center text-sm font-bold text-white">Save</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
