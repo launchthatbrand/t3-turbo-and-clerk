@@ -1,4 +1,4 @@
 {
   "extends": "../../tsconfig",
-  "include": ["**/*.ts", "**/*.tsx", "index.ts", "app.config.ts"]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.cjs", "index.ts", "app.config.ts"]
 }

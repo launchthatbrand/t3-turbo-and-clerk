@@ -1,5 +1,4 @@
 // @ts-check
-
 const { theme } = require("@acme/app/design/tailwind/theme");
 
 /**
