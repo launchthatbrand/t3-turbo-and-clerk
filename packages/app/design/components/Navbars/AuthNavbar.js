@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { TouchableOpacity } from "../../button";
 import { Text } from "../../typography";
+import { SignedIn, SignedOut } from "@clerk/nextjs";
 // components
 
 /* import PagesDropdown from "components/Dropdowns/PagesDropdown.js"; */
@@ -83,15 +84,26 @@ export default function Navbar(props) {
               </li>
 
               <li className="flex items-center">
-                <a href="/login">
-                  <button
-                    className="text-blueGray-700 active:bg-blueGray-50 mb-3 ml-3 rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none lg:mb-0 lg:mr-1"
-                    type="button"
-                    href="/sign-in"
-                  >
-                    <i className="fas fa-arrow-alt-circle-down"></i> Log In
-                  </button>
-                </a>
+                <SignedIn>
+                  <a href="/dashboard">
+                    <button
+                      className="text-blueGray-700 active:bg-blueGray-50 mb-3 ml-3 rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none lg:mb-0 lg:mr-1"
+                      type="button"
+                    >
+                      <i className="fas fa-arrow-alt-circle-down"></i> Dashboard
+                    </button>
+                  </a>
+                </SignedIn>
+                <SignedOut>
+                  <a href="/sign-in">
+                    <button
+                      className="text-blueGray-700 active:bg-blueGray-50 mb-3 ml-3 rounded bg-white px-4 py-2 text-xs font-bold uppercase shadow outline-none transition-all duration-150 ease-linear hover:shadow-md focus:outline-none lg:mb-0 lg:mr-1"
+                      type="button"
+                    >
+                      <i className="fas fa-arrow-alt-circle-down"></i> Log In
+                    </button>
+                  </a>
+                </SignedOut>
               </li>
             </ul>
           </div>
