@@ -9,7 +9,7 @@ const SignInPage = () => (
         </h1>
         <SignIn
           redirectUrl="/dashboard"
-          path="/login"
+          path="/sign-in"
           routing="path"
           signUpUrl="/sign-up"
         />

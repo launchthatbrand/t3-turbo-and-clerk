@@ -16,24 +16,26 @@ import { useRouter } from "next/router";
 function MyApp({ Component, pageProps }: SolitoAppProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
-  const publicPages = ["/dashboard", "/", "/sign-in"];
+  const publicPages = ["/dashboard", "/", "/sign-in", "/auth/login"];
   const { pathname } = useRouter();
   const isPublicPage = publicPages.includes(pathname);
   return (
-    <ClerkProvider {...pageProps}>
-      <Provider>
-        {isPublicPage ? (
-          <>{getLayout(<Component {...pageProps} />)}</>
-        ) : (
-          <>
-            <SignedIn>{getLayout(<Component {...pageProps} />)}</SignedIn>
-            <SignedOut>
-              <RedirectToSignIn />
-            </SignedOut>
-          </>
-        )}
-      </Provider>
-    </ClerkProvider>
+    <>
+      <ClerkProvider {...pageProps}>
+        <Provider>
+          {isPublicPage ? (
+            <>{getLayout(<Component {...pageProps} />)}</>
+          ) : (
+            <>
+              <SignedIn>{getLayout(<Component {...pageProps} />)}</SignedIn>
+              <SignedOut>
+                <RedirectToSignIn />
+              </SignedOut>
+            </>
+          )}
+        </Provider>
+      </ClerkProvider>
+    </>
   );
 }
 
