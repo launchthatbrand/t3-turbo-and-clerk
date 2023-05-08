@@ -35,6 +35,7 @@ importers:
       '@types/react-native': ~0.69.1
       expo: ^48.0.0
       expo-auth-session: ^4.0.3
+      expo-av: ~13.2.1
       expo-linking: ~4.0.1
       expo-random: ^13.0.0
       expo-router: ^1.5.2
@@ -61,6 +62,7 @@ importers:
       '@react-navigation/drawer': 6.6.2_abgalvkyk6lr4zyqhk6stgme64
       expo: 48.0.10_@babel+core@7.21.4
       expo-auth-session: 4.0.3_expo@48.0.10
+      expo-av: 13.2.1_expo@48.0.10
       expo-linking: 4.0.1_expo@48.0.10
       expo-random: 13.1.1_expo@48.0.10
       expo-router: 1.5.3_j7j7mhnk6ex2ldyrvan3paniei
@@ -165,6 +167,7 @@ importers:
       '@shopify/flash-list': ^1.4.0
       '@trpc/next': 10.9.0
       '@trpc/react-query': 10.9.0
+      expo-av: ~13.2.1
       nativewind: ^2.0.11
       react-hook-form: ^7.43.9
       solito: 3.0.0
@@ -175,6 +178,7 @@ importers:
       '@shopify/flash-list': 1.4.2
       '@trpc/next': 10.9.0_@trpc+react-query@10.9.0
       '@trpc/react-query': 10.9.0
+      expo-av: 13.2.1
       nativewind: 2.0.11
       react-hook-form: 7.43.9
       solito: 3.0.0
@@ -5663,6 +5667,20 @@ packages:
     transitivePeerDependencies:
       - expo
       - supports-color
+    dev: false
+
+  /expo-av/13.2.1:
+    resolution: {integrity: sha512-mC0mYSzaOaZgXjzhW2l4Ag325JjH6q5IbptfwD7gkMOFYy7VPOMxEMUnetadbs3DDzmgE6vUWrTjUIUbwq59qg==}
+    peerDependencies:
+      expo: '*'
+    dev: false
+
+  /expo-av/13.2.1_expo@48.0.10:
+    resolution: {integrity: sha512-mC0mYSzaOaZgXjzhW2l4Ag325JjH6q5IbptfwD7gkMOFYy7VPOMxEMUnetadbs3DDzmgE6vUWrTjUIUbwq59qg==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 48.0.10_@babel+core@7.21.4
     dev: false
 
   /expo-constants/14.2.1_expo@48.0.10:

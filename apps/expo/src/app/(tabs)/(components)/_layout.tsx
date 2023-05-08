@@ -42,6 +42,13 @@ function CustomDrawerContent({
         }}
       />
       <DrawerItem
+        label="CourseComponent"
+        onPress={(): void => {
+          navigation.navigate("CourseComponent");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
         label="Login"
         onPress={(): void => {
           navigation.navigate("Login");

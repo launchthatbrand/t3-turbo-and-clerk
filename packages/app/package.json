@@ -11,6 +11,7 @@
     "@shopify/flash-list": "^1.4.0",
     "@trpc/next": "10.9.0",
     "@trpc/react-query": "10.9.0",
+    "expo-av": "~13.2.1",
     "nativewind": "^2.0.11",
     "react-hook-form": "^7.43.9",
     "solito": "3.0.0"
