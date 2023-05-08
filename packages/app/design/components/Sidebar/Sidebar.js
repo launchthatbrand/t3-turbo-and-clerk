@@ -88,7 +88,7 @@ export default function Sidebar() {
 
             <ul className="flex list-none flex-col md:min-w-full md:flex-col">
               <li className="items-center">
-                <Link legacyBehavior href="/">
+                <Link legacyBehavior href="/dashboard">
                   <a
                     href="#pablo"
                     className={

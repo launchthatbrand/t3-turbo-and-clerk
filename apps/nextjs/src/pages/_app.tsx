@@ -17,8 +17,8 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   const publicPages = ["/dashboard", "/", "/sign-in", "/auth/login"];
-  const { pathname } = useRouter();
-  const isPublicPage = publicPages.includes(pathname);
+  const router = useRouter();
+  const isPublicPage = publicPages.includes(router.pathname);
   return (
     <>
       <ClerkProvider {...pageProps}>
