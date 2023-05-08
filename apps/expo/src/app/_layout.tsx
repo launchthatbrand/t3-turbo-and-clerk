@@ -31,7 +31,7 @@ const RootLayout = () => {
           </TRPCProvider>
         </SignedIn>
         <SignedOut>
-          <Login />
+          <SignInSignUpScreen />
         </SignedOut>
       </ClerkProvider>
     </Provider>
