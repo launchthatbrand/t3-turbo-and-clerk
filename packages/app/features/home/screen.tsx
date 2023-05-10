@@ -52,7 +52,7 @@ export function HomeScreen() {
           estimatedItemSize={20}
           ItemSeparatorComponent={() => <View className="h-2" />}
           renderItem={(p) => (
-            <TouchableOpacity onPress={() => setShowPost(p.item.title)}>
+            <TouchableOpacity onPress={() => setShowPost(p.item.post_title)}>
               <PostCard
                 post={p.item}
                 /* onDelete={() => deletePostMutation.mutate(p.item.id)} */
