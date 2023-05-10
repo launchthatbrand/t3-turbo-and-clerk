@@ -16,8 +16,10 @@ const PostCard: React.FC<{
 }> = ({ post }) => {
   return (
     <View className="rounded-lg border-2 border-gray-500 p-4">
-      <Text className="text-xl font-semibold text-[#cc66ff]">{post.title}</Text>
-      <Text className="text-white">{post.content}</Text>
+      <Text className="text-xl font-semibold text-[#cc66ff]">
+        {post.post_title}
+      </Text>
+      <Text className="text-white">{post.post_content}</Text>
     </View>
   );
 };

@@ -42,6 +42,13 @@ function CustomDrawerContent({
         }}
       />
       <DrawerItem
+        label="Video"
+        onPress={(): void => {
+          navigation.navigate("Video");
+          // router.replace('drawer/screen1');
+        }}
+      />
+      <DrawerItem
         label="CourseComponent"
         onPress={(): void => {
           navigation.navigate("CourseComponent");

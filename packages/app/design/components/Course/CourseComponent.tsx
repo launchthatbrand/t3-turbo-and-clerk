@@ -13,19 +13,19 @@ const DATA: Item[] = [
     id: "182134344",
     title: "TradingView 101 By : Nick FitzGerald",
     videoUri:
-      "https://player.vimeo.com/progressive_redirect/playback/182134344/container/add882d2-4961-4fce-8255-96eaec2006d8/cffd32b2?expires=1683670025&loc=external&signature=91ac0596585a2535ded03a2db118f8789ad3361635900b6bbc662b5d25de8039",
+      "https://player.vimeo.com/progressive_redirect/playback/182134344/rendition/720p/file.mp4?loc=external&signature=ec882b10dd63e24f247c4dfcb4acbb9d5b4772829a1b506c6e766c40af454655",
   },
   {
     id: "160573172",
     title: "Risk Management 101",
     videoUri:
-      "https://player.vimeo.com/progressive_redirect/playback/160573172/container/3ef064ad-1725-48b8-b19f-105bae732687/785909ac?expires=1683669915&loc=external&signature=0cda37086224ed5589ccb462d04d384635811ce4a7fd8ab9a112241cad4caf3b",
+      "https://player.vimeo.com/progressive_redirect/playback/160573172/rendition/720p/file.mp4?loc=external&signature=c0b4507330ec354b79e77cacf8acba3e8ff3a19df74727e9a60fd51833ae3d84",
   },
   {
     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-    title: "Third Item",
+    title: "MT4 WALK THROUGH",
     videoUri:
-      "https://player.vimeo.com/progressive_redirect/playback/245642592/container/44089a6a-d6ff-4554-9102-cbe1fe3ec431/631a9fb5?expires=1683670101&loc=external&signature=49d374fbfadab46f00643f0d0554bedb383ff5b77f12caf477d84c293cc3f70f",
+      "https://player.vimeo.com/progressive_redirect/playback/245642592/rendition/720p/file.mp4?loc=external&signature=fbea621830ed8b1f540494bd70702b7f88af0f5ce5e9a611bbce615ebb9fb9fb",
   },
 ];
 
