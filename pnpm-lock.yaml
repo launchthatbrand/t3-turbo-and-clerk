@@ -1,5 +1,10 @@
 lockfileVersion: 5.4
 
+patchedDependencies:
+  '@react-native/assets@1.0.0':
+    hash: r2ds4yczmussmlwia5ljo3brfq
+    path: patches/@react-native__assets@1.0.0.patch
+
 importers:
 
   .:
@@ -2873,9 +2878,10 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@react-native/assets/1.0.0:
+  /@react-native/assets/1.0.0_r2ds4yczmussmlwia5ljo3brfq:
     resolution: {integrity: sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ==}
     dev: false
+    patched: true
 
   /@react-native/normalize-color/2.1.0:
     resolution: {integrity: sha512-Z1jQI2NpdFJCVgpY+8Dq/Bt3d+YUi1928Q+/CZm/oh66fzM0RUl54vvuXlPJKybH4pdCZey1eDTPaLHkMPNgWA==}
@@ -9218,7 +9224,7 @@ packages:
       '@react-native-community/cli': 10.2.0_@babel+core@7.21.4
       '@react-native-community/cli-platform-android': 10.2.0
       '@react-native-community/cli-platform-ios': 10.2.0
-      '@react-native/assets': 1.0.0
+      '@react-native/assets': 1.0.0_r2ds4yczmussmlwia5ljo3brfq
       '@react-native/normalize-color': 2.1.0
       '@react-native/polyfills': 2.0.0
       abort-controller: 3.0.0
