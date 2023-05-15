@@ -1,15 +1,15 @@
 const { theme } = require("@acme/app/design/tailwind/theme");
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  mode: "jit",
+import type { Config } from "tailwindcss";
+
+import baseConfig from "@acme/tailwind-config";
+
+export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "../../packages/**/*.{js,jsx,ts,tsx}",
   ],
+  presets: [baseConfig],
   plugins: [require("nativewind/tailwind/css")],
   important: "html",
-  theme: {
-    ...theme,
-  },
-};
+} satisfies Config;

@@ -15,7 +15,7 @@ importers:
       dotenv-cli: ^7.0.0
       eslint: ^8.37.0
       prettier: ^2.8.7
-      prettier-plugin-tailwindcss: ^0.1.13
+      prettier-plugin-tailwindcss: ^0.2.1
       turbo: ^1.8.8
       typescript: ^4.9.5
     dependencies:
@@ -25,7 +25,7 @@ importers:
       dotenv-cli: 7.2.1
       eslint: 8.38.0
       prettier: 2.8.7
-      prettier-plugin-tailwindcss: 0.1.13_prettier@2.8.7
+      prettier-plugin-tailwindcss: 0.2.8_prettier@2.8.7
       turbo: 1.8.8
       typescript: 4.9.5
 
@@ -172,10 +172,14 @@ importers:
       '@shopify/flash-list': ^1.4.0
       '@trpc/next': 10.9.0
       '@trpc/react-query': 10.9.0
+      '@types/three': ^0.146.0
+      autoprefixer: ^10.4.13
       expo-av: ~13.2.1
       nativewind: ^2.0.11
+      postcss: ^8.4.20
       react-hook-form: ^7.43.9
       solito: 3.0.0
+      tailwindcss: ^3.2.4
     dependencies:
       '@acme/api': link:../api
       '@react-navigation/native': 6.1.6
@@ -184,9 +188,14 @@ importers:
       '@trpc/next': 10.9.0_@trpc+react-query@10.9.0
       '@trpc/react-query': 10.9.0
       expo-av: 13.2.1
-      nativewind: 2.0.11
+      nativewind: 2.0.11_tailwindcss@3.3.1
       react-hook-form: 7.43.9
       solito: 3.0.0
+    devDependencies:
+      '@types/three': 0.146.0
+      autoprefixer: 10.4.14_postcss@8.4.21
+      postcss: 8.4.21
+      tailwindcss: 3.3.1_postcss@8.4.21
 
   packages/config/eslint:
     specifiers:
@@ -1621,7 +1630,7 @@ packages:
     resolution: {integrity: sha512-3cA2FDbNv5jK+iqckV+ZbTdz/Eg69mSOUkd8WTgOGj51sYTxOAr0sOhdhudQhdWhIk4H/43523VdwU3FUtFguQ==}
     engines: {node: '>=14'}
     dependencies:
-      '@clerk/types': 3.34.0
+      '@clerk/types': 3.35.3
       '@peculiar/webcrypto': 1.4.1
       '@types/node': 16.18.6
       deepmerge: 4.2.2
@@ -1683,8 +1692,8 @@ packages:
     peerDependencies:
       react: '>=16'
     dependencies:
-      '@clerk/shared': 0.15.2_react@18.2.0
-      '@clerk/types': 3.34.0
+      '@clerk/shared': 0.15.6_react@18.2.0
+      '@clerk/types': 3.35.3
       react: 18.2.0
       swr: 1.3.0_react@18.2.0
       tslib: 2.4.1
@@ -1695,7 +1704,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@clerk/backend': 0.16.1
-      '@clerk/types': 3.34.0
+      '@clerk/types': 3.35.3
       '@types/cookies': 0.7.7
       '@types/express': 4.17.14
       '@types/node-fetch': 2.6.2
@@ -1731,14 +1740,6 @@ packages:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tslib: 2.4.1
-    dev: false
-
-  /@clerk/shared/0.15.2_react@18.2.0:
-    resolution: {integrity: sha512-g7TnJOqG+M+2PbvBDRBM2gApSmxfLnXslXkfyWPTwyBV6QE2LLNKF2EZds/N+LFwDdp21ow7k8lmq/qEXoZeJw==}
-    peerDependencies:
-      react: '>=16'
-    dependencies:
-      react: 18.2.0
     dev: false
 
   /@clerk/shared/0.15.6_react@18.2.0:
@@ -3395,6 +3396,16 @@ packages:
   /@types/stack-utils/2.0.1:
     resolution: {integrity: sha512-Hl219/BT5fLAaz6NDkSuhzasy49dwQS/DSdu4MdggFB8zcXv7vflBI3xp7FEmkmdDkBUI2bPUNeMttp2knYdxw==}
     dev: false
+
+  /@types/three/0.146.0:
+    resolution: {integrity: sha512-75AgysUrIvTCB054eQa2pDVFurfeFW8CrMQjpzjt3yHBfuuknoSvvsESd/3EhQxPrz9si3+P0wiDUVsWUlljfA==}
+    dependencies:
+      '@types/webxr': 0.5.2
+    dev: true
+
+  /@types/webxr/0.5.2:
+    resolution: {integrity: sha512-szL74BnIcok9m7QwYtVmQ+EdIKwbjPANudfuvDrAF8Cljg9MKUlIoc1w5tjj9PMpeSH3U1Xnx//czQybJ0EfSw==}
+    dev: true
 
   /@types/yargs-parser/21.0.0:
     resolution: {integrity: sha512-iO9ZQHkZxHn4mSakYV0vFHAVDyEOIJQrV2uZ06HxEPcx+mt8swXoZHIbaaJ2crJYFfErySgktuTZ3BeLz+XmFA==}
@@ -8070,7 +8081,7 @@ packages:
       - supports-color
     dev: false
 
-  /nativewind/2.0.11:
+  /nativewind/2.0.11_tailwindcss@3.3.1:
     resolution: {integrity: sha512-qCEXUwKW21RYJ33KRAJl3zXq2bCq82WoI564fI21D/TiqhfmstZOqPN53RF8qK1NDK6PGl56b2xaTxgObEePEg==}
     engines: {node: '>=14.18'}
     peerDependencies:
@@ -8088,6 +8099,7 @@ packages:
       postcss-css-variables: 0.18.0_postcss@8.4.21
       postcss-nested: 5.0.6_postcss@8.4.21
       react-is: 18.2.0
+      tailwindcss: 3.3.1_postcss@8.4.21
       use-sync-external-store: 1.2.0
     transitivePeerDependencies:
       - react
@@ -8831,11 +8843,54 @@ packages:
     engines: {node: '>=4'}
     dev: false
 
-  /prettier-plugin-tailwindcss/0.1.13_prettier@2.8.7:
-    resolution: {integrity: sha512-/EKQURUrxLu66CMUg4+1LwGdxnz8of7IDvrSLqEtDqhLH61SAlNNUSr90UTvZaemujgl3OH/VHg+fyGltrNixw==}
+  /prettier-plugin-tailwindcss/0.2.8_prettier@2.8.7:
+    resolution: {integrity: sha512-KgPcEnJeIijlMjsA6WwYgRs5rh3/q76oInqtMXBA/EMcamrcYJpyhtRhyX1ayT9hnHlHTuO8sIifHF10WuSDKg==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
+      '@ianvs/prettier-plugin-sort-imports': '*'
+      '@prettier/plugin-pug': '*'
+      '@shopify/prettier-plugin-liquid': '*'
+      '@shufo/prettier-plugin-blade': '*'
+      '@trivago/prettier-plugin-sort-imports': '*'
       prettier: '>=2.2.0'
+      prettier-plugin-astro: '*'
+      prettier-plugin-css-order: '*'
+      prettier-plugin-import-sort: '*'
+      prettier-plugin-jsdoc: '*'
+      prettier-plugin-organize-attributes: '*'
+      prettier-plugin-organize-imports: '*'
+      prettier-plugin-style-order: '*'
+      prettier-plugin-svelte: '*'
+      prettier-plugin-twig-melody: '*'
+    peerDependenciesMeta:
+      '@ianvs/prettier-plugin-sort-imports':
+        optional: true
+      '@prettier/plugin-pug':
+        optional: true
+      '@shopify/prettier-plugin-liquid':
+        optional: true
+      '@shufo/prettier-plugin-blade':
+        optional: true
+      '@trivago/prettier-plugin-sort-imports':
+        optional: true
+      prettier-plugin-astro:
+        optional: true
+      prettier-plugin-css-order:
+        optional: true
+      prettier-plugin-import-sort:
+        optional: true
+      prettier-plugin-jsdoc:
+        optional: true
+      prettier-plugin-organize-attributes:
+        optional: true
+      prettier-plugin-organize-imports:
+        optional: true
+      prettier-plugin-style-order:
+        optional: true
+      prettier-plugin-svelte:
+        optional: true
+      prettier-plugin-twig-melody:
+        optional: true
     dependencies:
       prettier: 2.8.7
     dev: false
