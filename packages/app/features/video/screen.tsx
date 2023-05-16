@@ -1,10 +1,32 @@
+import * as React from "react";
 import { View, StyleSheet, Button } from "react-native";
-import { Video, ResizeMode } from "expo-av";
-import React from "react";
+import { Video, ResizeMode, AVPlaybackStatus } from "expo-av";
+
+interface PlaybackStatus {
+  isPlaying: boolean;
+  // Other properties of the playback status
+}
 
 export function VideoScreen() {
-  const video = React.useRef(null);
-  const [status, setStatus] = React.useState({});
+  const video = React.useRef<Video | null>(null);
+  const [status, setStatus] = React.useState<PlaybackStatus>(
+    {} as PlaybackStatus,
+  );
+
+  const handlePlaybackStatusUpdate = (newStatus: AVPlaybackStatus) => {
+    setStatus(newStatus as PlaybackStatus);
+  };
+
+  const handlePlayPause = async () => {
+    if (video.current) {
+      if (status.isPlaying) {
+        await video.current.pauseAsync();
+      } else {
+        await video.current.playAsync();
+      }
+    }
+  };
+
   return (
     <View style={styles.container}>
       <Video
@@ -16,16 +38,12 @@ export function VideoScreen() {
         useNativeControls
         resizeMode={ResizeMode.CONTAIN}
         isLooping
-        onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+        onPlaybackStatusUpdate={handlePlaybackStatusUpdate}
       />
       <View style={styles.buttons}>
         <Button
           title={status.isPlaying ? "Pause" : "Play"}
-          onPress={() =>
-            status.isPlaying
-              ? video.current.pauseAsync()
-              : video.current.playAsync()
-          }
+          onPress={handlePlayPause}
         />
       </View>
     </View>
