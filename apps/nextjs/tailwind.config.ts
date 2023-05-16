@@ -12,4 +12,7 @@ export default {
   presets: [baseConfig],
   plugins: [require("nativewind/tailwind/css")],
   important: "html",
+  theme: {
+    ...theme,
+  },
 } satisfies Config;
