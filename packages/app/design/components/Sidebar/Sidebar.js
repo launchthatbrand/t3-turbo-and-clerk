@@ -254,6 +254,30 @@ export default function Sidebar() {
                   </a>
                 </Link>
               </li>
+
+              <li className="items-center">
+                <Link legacyBehavior href="/course">
+                  <a
+                    href="#pablo"
+                    className={
+                      "block py-3 text-xs font-bold uppercase " +
+                      (router.pathname.indexOf("/course") !== -1
+                        ? "text-lightBlue-500 hover:text-lightBlue-600"
+                        : "text-blueGray-700 hover:text-blueGray-500")
+                    }
+                  >
+                    <i
+                      className={
+                        "fas fa-users mr-2 text-sm " +
+                        (router.pathname.indexOf("/course") !== -1
+                          ? "opacity-75"
+                          : "text-blueGray-300")
+                      }
+                    ></i>{" "}
+                    Course
+                  </a>
+                </Link>
+              </li>
             </ul>
 
             {/* Divider */}
