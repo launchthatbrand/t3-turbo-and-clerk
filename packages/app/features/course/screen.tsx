@@ -3,7 +3,7 @@ import { CourseComponent } from "../../design/components/Course/CourseComponent"
 import { trpc } from "../../utils/trpc";
 
 export function CourseScreen() {
-  const { data: postData, isLoading, error } = trpc.post.all.useQuery();
+  const { data: postData, isLoading, error } = trpc.lesson.all.useQuery();
   const data = [
     {
       ID: BigInt(1),
