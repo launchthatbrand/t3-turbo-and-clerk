@@ -35,15 +35,22 @@ type Item = {
   videoUri: string;
 };
 
-const Item = ({ item, onPress, backgroundColor, textColor }) => (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Text style={[styles.title, textColor]}>{item.title}</Text>
+type ItemProps = {
+  item: Item;
+  onPress: () => void;
+  backgroundColor: { backgroundColor: string };
+  textColor: { color: string };
+};
+
+const Item = ({ item, onPress, backgroundColor, textColor }: ItemProps) => (
+  <TouchableOpacity onPress={onPress} style={[backgroundColor]}>
+    <Text style={[textColor]}>{item.title}</Text>
   </TouchableOpacity>
 );
 
 export function CourseComponent() {
   const video = React.useRef(null);
-  const [currentItem, setCurrentItem] = React.useState<Item>();
+  const [currentItem, setCurrentItem] = React.useState<Item>(DATA[0]!);
 
   const ListHeader = () => {
     //View to set in Header
@@ -64,7 +71,7 @@ export function CourseComponent() {
     );
   };
 
-  const renderItem = ({ item }) => {
+  const renderItem = ({ item }: { item: Item }) => {
     const backgroundColor = item.id === currentItem?.id ? "#6e3b6e" : "#f9c2ff";
     const color = item.id === currentItem?.id ? "white" : "black";
 

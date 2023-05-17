@@ -1,2 +1,2 @@
-import { SolitoScreen } from "@acme/app/features/solito/screen";
-export default SolitoScreen;
+import { CourseScreen } from "@acme/app/features/course/screen";
+export default CourseScreen;
