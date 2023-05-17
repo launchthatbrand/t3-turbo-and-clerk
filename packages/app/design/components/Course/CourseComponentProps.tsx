@@ -4,7 +4,8 @@ import { FlatList, ListRenderItem } from "react-native";
 import { Text } from "../../../design/typography";
 import { View } from "../../../design/view";
 
-import { type RouterOutputs } from "../../../utils/trpc";
+import { TouchableOpacity } from "../../button";
+import { FlashList } from "@shopify/flash-list";
 
 interface CourseComponentProps {
   data?: DataItem[];
@@ -15,17 +16,23 @@ type DataItem = {
   post_title: string;
 };
 
+type ItemProps = {
+  item: DataItem;
+};
+
+const Item = ({ item }: ItemProps) => (
+  <TouchableOpacity>
+    <Text>{item.post_title}</Text>
+  </TouchableOpacity>
+);
+
 export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
-  const renderItem: ListRenderItem<DataItem> = ({ item }) => {
-    return (
-      <View>
-        <Text>{item.post_title}</Text>
-      </View>
-    );
+  const renderItem = ({ item }: { item: DataItem }) => {
+    return <Item item={item} />;
   };
 
   return (
-    <FlatList
+    <FlashList
       data={data}
       renderItem={renderItem}
       keyExtractor={(item) => item.ID.toString()}
