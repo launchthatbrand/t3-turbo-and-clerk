@@ -7,7 +7,7 @@ import { View } from "../../../design/view";
 import { type RouterOutputs } from "../../../utils/trpc";
 
 interface CourseComponentProps {
-  data?: Partial<RouterOutputs["post"]["all"][0]>[]; // Type based on TRPC's RouterOutputs
+  data?: ArrayLike<RouterOutputs["post"]["all"][0]>; // Type based on TRPC's RouterOutputs
 }
 
 export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
@@ -31,7 +31,7 @@ export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
   );
 };
 
-CourseComponent.defaultProps = {
+/* CourseComponent.defaultProps = {
   data: [
     {
       ID: 1,
@@ -42,4 +42,4 @@ CourseComponent.defaultProps = {
       post_title: "Default Post Title 2",
     },
   ],
-};
+}; */
