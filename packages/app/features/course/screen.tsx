@@ -1,5 +1,5 @@
 import { View } from "../../design/view";
-import { CourseComponent } from "../../design/components/Course/CourseComponentProps";
+import { CourseComponent } from "../../design/components/Course/CourseComponent";
 
 export function CourseScreen() {
   const data = [
