@@ -1,7 +1,9 @@
 import { View } from "../../design/view";
 import { CourseComponent } from "../../design/components/Course/CourseComponent";
+import { trpc } from "../../utils/trpc";
 
 export function CourseScreen() {
+  const { data: postData, isLoading, error } = trpc.post.all.useQuery();
   const data = [
     {
       ID: BigInt(1),
@@ -24,7 +26,7 @@ export function CourseScreen() {
   ];
   return (
     <View className="bg-blueGray-600 flex flex-row flex-wrap justify-center">
-      <CourseComponent data={data} />
+      <CourseComponent data={postData} />
     </View>
   );
 }

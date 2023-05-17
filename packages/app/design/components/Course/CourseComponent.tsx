@@ -15,7 +15,7 @@ interface CourseComponentProps {
 type DataItem = {
   ID: bigint;
   post_title: string;
-  videoUri: string;
+  videoUri?: string;
 };
 
 type ItemProps = {
