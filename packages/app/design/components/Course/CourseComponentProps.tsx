@@ -1,5 +1,5 @@
 import React, { useState, useRef, FC } from "react";
-import { FlatList } from "react-native";
+import { FlatList, ListRenderItem } from "react-native";
 
 import { Text } from "../../../design/typography";
 import { View } from "../../../design/view";
@@ -7,20 +7,22 @@ import { View } from "../../../design/view";
 import { type RouterOutputs } from "../../../utils/trpc";
 
 interface CourseComponentProps {
-  data?: ArrayLike<RouterOutputs["post"]["all"][0]>; // Type based on TRPC's RouterOutputs
+  data?: DataItem[];
 }
 
+type DataItem = {
+  ID: bigint;
+  post_title: string;
+};
+
 export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
-  const renderItem = ({
-    item,
-  }: {
-    item: RouterOutputs["post"]["all"][number];
-  }) => (
-    <View>
-      <Text>{item.post_title}</Text>
-      {/* Render other properties as needed */}
-    </View>
-  );
+  const renderItem: ListRenderItem<DataItem> = ({ item }) => {
+    return (
+      <View>
+        <Text>{item.post_title}</Text>
+      </View>
+    );
+  };
 
   return (
     <FlatList
@@ -31,15 +33,15 @@ export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
   );
 };
 
-/* CourseComponent.defaultProps = {
+CourseComponent.defaultProps = {
   data: [
     {
-      ID: 1,
+      ID: BigInt(1),
       post_title: "Default Post Title 1",
     },
     {
-      ID: 2,
+      ID: BigInt(2),
       post_title: "Default Post Title 2",
     },
   ],
-}; */
+};
