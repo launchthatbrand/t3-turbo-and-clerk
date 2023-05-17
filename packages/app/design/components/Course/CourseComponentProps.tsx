@@ -38,12 +38,12 @@ export const CourseComponent: FC<CourseComponentProps> = ({ data }) => {
   };
 
   return (
-    <View>
+    <View className="h-screen">
       <Video
         ref={video}
         style={styles.video}
         source={{
-          uri: currentItem?.videoUri,
+          uri: currentItem?.videoUri || "",
         }}
         useNativeControls
         resizeMode={ResizeMode.CONTAIN}
@@ -64,10 +64,12 @@ CourseComponent.defaultProps = {
     {
       ID: BigInt(1),
       post_title: "Default Post Title 1",
+      videoUri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
     },
     {
       ID: BigInt(2),
       post_title: "Default Post Title 2",
+      videoUri: "https://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4",
     },
   ],
 };
